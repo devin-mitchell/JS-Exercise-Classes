@@ -110,7 +110,15 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    
+   constructor(arg) {
+     this.name = arg.name,
+     this.age = arg.age,
+     this.location = arg.location
+   }
+
+   speak() {
+     return `Hello my name is ${this.name}, I am from ${this.location}`;
+   }  
   }
   
   /*
