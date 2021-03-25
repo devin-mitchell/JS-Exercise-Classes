@@ -73,8 +73,29 @@ class Airplane {
   */
   
  class Car {
-    
+   constructor(model, milesPerGallon){
+     this.model = model,
+     this.milesPerGallon = milesPerGallon,
+     this.tank = 0,
+     this.odometer = 0
+   }
+   fill(gallons) {
+     this.tank += gallons;
+   }
+   drive(distance) {
+     if(distance < this.tank * this.milesPerGallon) {// have enough gas to drive specified distance
+        this.odometer += distance;
+        this.tank -= distance / this.milesPerGallon;
+     } else {//do not have enough gas to drive specified distance
+       this.odometer += this.tank * this.milesPerGallon;
+       this.tank = 0;
+       return `I ran out of fuel at ${this.odometer}!`;
+     }
+   }  
   }
+  const car1 = new Car("subaru", 19);
+  car1.fill(15);
+  console.log('task 2-------------------------->', car1.drive(1000), car1.tank.toFixed(2), car1.odometer);
   
   /*
     TASK 3
