@@ -115,7 +115,6 @@ class Airplane {
      this.age = attr.age,
      this.location = attr.location
    }
-
    speak() {
      return `Hello my name is ${this.name}, I am from ${this.location}`;
    }  
@@ -143,7 +142,6 @@ class Airplane {
       this.favLanguage = attr.favLanguage,
       this.catchPhrase = attr. catchPhrase
    }
-   
    demo(subject) {
      return `Today we are learning about ${subject}`;
    }
@@ -167,6 +165,8 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
+
+
  class Student extends Lambdasian {
      constructor(attr) {
        super(attr);
@@ -174,7 +174,6 @@ class Airplane {
        this.className = attr.className,
        this.favSubjects = attr.favSubjects
      }
-
      listSubjects() {
        return `Loving ${this.favSubjects.join(', ')}`;
      }
@@ -199,8 +198,18 @@ class Airplane {
           + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
- class ProjectManager {
-     
+ class ProjectManager extends Instructor{
+   constructor(attr) {
+     super(attr);
+     this.gradClassName = attr.gradClassName,
+     this.favInstructor = attr.favInstructor
+   }
+   standUp(channel) {
+     return `${this.name} announces to ${channel} @channel standy times!`;
+   }
+   debugsCode(studentObj, subject) {
+     return `${this.name} debugs ${studentObj.name}'s code on ${subject}`;
+   }
  }
   /*
     STRETCH PROBLEM (no tests!)
